@@ -1,0 +1,20 @@
+2016-05-30
+---------------------------------------------------------------------------------------------------------------------
+
+Module for monitoring inputs with valid signal source. On presentation page buttons for inputs appears/disappers when relevant
+video signal is valid/invalid.
+
+In DEFINE_VARIABLE section programmer must declare 2 dimensional array with button numbers and phisical inputs of DVX.
+Even if system has one tp it has to be declared as one element array.
+
+Module recognizes only phisical inputs even on dxlink input!!!
+
+- initial:	v1.0.0
+		
+		DEFINE_VARIABLE
+
+		INTEGER presentationSources[][] = {{1 ,2 ,3 , 4, 11,12,13,14},	//btnNumbers
+																			 {1 ,2 ,3 , 4,	5, 6, 7, 8}}	//phisicalInputs
+		DEV dvPanelsPresentation[] = {dvPanelPresentation,dviPadPresentation}
+		
+		DEFINE_MODULE 'featureInputDetection_DVX' featureInputDetection01(dvPanelsPresentation,presentationSources)
